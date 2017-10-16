@@ -1,0 +1,13 @@
+{
+  "name": "algorithms-data-structures-js",
+  "scripts": {
+    "test": "jest"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Will Yau (dev@willyau.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
