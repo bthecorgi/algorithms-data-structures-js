@@ -1,4 +1,6 @@
 /**
+ * Time: O(log n)
+ * Space: Constant
  * 
  * @param {number} needle 
  * @param {number[]} sortedHaystack 
