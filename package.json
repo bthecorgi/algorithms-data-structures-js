@@ -1,13 +1,22 @@
 {
   "name": "algorithms-data-structures-js",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "jest"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "version": "1.0.0",
   "main": "index.js",
   "author": "Will Yau (dev@willyau.com)",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4"
   }
 }
