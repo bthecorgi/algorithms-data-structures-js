@@ -12,7 +12,7 @@ describe("MaxBinaryHeap", () => {
     expect(heap.heap).toEqual([null, 5, 4, 2, 1, 3]);
   });
 
-  it.only("should remove", () => {
+  it("should remove", () => {
     const heap = new MaxBinaryHeap();
     heap.insert(1);
     heap.insert(2);

@@ -66,30 +66,36 @@ class MaxBinaryHeap {
 
       if (leftChild < this.heap.length && rightChild < this.heap.length) {
         if (this.heap[leftChild] > this.heap[rightChild]) {
-          this.heap[current] = this.heap[leftChild];
-          this.heap[leftChild] = num;
-          current = leftChild;
+          current = this.moveLeftChildToCurrent(current, leftChild, num);
         } else {
-          this.heap[current] = this.heap[rightChild];
-          this.heap[rightChild] = num;
-          current = rightChild;
+          current = this.moveRightChildToCurrent(current, rightChild, num);
         }
       } else if (
         rightChild >= this.heap.length && // right child does not exist
         this.heap[leftChild] > num
       ) {
-        this.heap[current] = this.heap[leftChild];
-        this.heap[leftChild] = num;
-        current = leftChild;
+        current = this.moveLeftChildToCurrent(current, leftChild, num);
       } else if (
         leftChild >= this.heap.length && // left child does not exist
         this.heap[rightChild] > num
       ) {
-        this.heap[current] = this.heap[rightChild];
-        this.heap[rightChild] = num;
-        current = rightChild;
+        current = this.moveRightChildToCurrent(current, rightChild, num);
       }
     }
+  }
+
+  moveLeftChildToCurrent(current, leftChild, num) {
+    this.heap[current] = this.heap[leftChild];
+    this.heap[leftChild] = num;
+    current = leftChild;
+    return current;
+  }
+
+  moveRightChildToCurrent(current, rightChild, num) {
+    this.heap[current] = this.heap[rightChild];
+    this.heap[rightChild] = num;
+    current = rightChild;
+    return current;
   }
 }
 
